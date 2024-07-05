@@ -1,0 +1,7 @@
+package fileupload;
+import com.oreilly.servlet.multipartRequest;
+public class FileUtil {
+	public static MultipartRequest() {
+		return null;
+	}
+}

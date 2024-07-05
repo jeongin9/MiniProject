@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/Users/lucy/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+4111899621.index
+292408423.index
+323879300.index
+4111899621.index
+585254372.index
+1938486253.index
+3314048248.index
+4269787130.index
