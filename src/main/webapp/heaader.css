@@ -44,3 +44,9 @@
             text-align: center;
             margin-top: 20px;
         }
+        
+        .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
