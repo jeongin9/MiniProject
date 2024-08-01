@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-	
+@charset "UTF-8";
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -50,21 +44,3 @@
             text-align: center;
             margin-top: 20px;
         }
-	
-</style>
-</head>
-<body>
-!-- 네비게이션 바 -->
-<header>
-    <div class="navbar">
-        <a href="#">스토리</a>
-        <a href="#">관광명소</a>
-        <a href="#">로컬푸드</a>
-        <a href="#">트래블매거진</a>
-        <a href="#">이벤트</a>
-        <a href="#">공지사항</a>
-    </div>
-</header>
-
-</body>
-</html>
