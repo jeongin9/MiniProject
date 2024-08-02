@@ -63,7 +63,7 @@
         <!-- 스토리 끝 -->
 
         <!-- banner start -->
-        <!-- banner 이미지가 없네요...?....재 넣어져있는건 예시... -->
+        <!-- banner완료 .. -->
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
