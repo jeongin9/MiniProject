@@ -1,3 +1,10 @@
-select * from tab;
+create table users(
+    id varchar2(20) primary key,
+    pass varchar2(20) not null,
+    name varchar2(15) not null,
+    phone varchar2(20) not null
+);
 
-select tname from tab;
+commit;
+
+select * from users;
