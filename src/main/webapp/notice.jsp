@@ -47,12 +47,14 @@ width: 50px;
 position: absolute;
 	right:180px;
 }
+
+
     </style>
 </head>
 <body>
 <header>
     <jsp:include page="header.jsp" />
-	<div class="square">
+	<div>
 		<h1>공지사항</h1>  
 		<h4>트래블 잇의 주요 소식을 안내받으세요!</h4>
 	  <div class= "searchset">
@@ -65,9 +67,6 @@ position: absolute;
     <button type="submit" class="btn2">검색</button>
 	</div>	         
    
-     <div class="item"> <img src="resources/flower.JPG" width="207" height="210" />
-     </div>
-     
 	</div>
 </header>
       
