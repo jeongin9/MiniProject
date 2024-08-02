@@ -63,23 +63,23 @@
         <!-- 스토리 끝 -->
 
         <!-- banner start -->
-        <!-- banner 이미지가 없네요...?....src에 이미지만 넣어주면 됩니다. 현재 넣어져있는건 예시... -->
+        <!-- banner 이미지가 없네요...?....재 넣어져있는건 예시... -->
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide">
-                    <img src="resources/banner1.jpg" alt="Slide 1">
+                    <img src="resources/banner1.png" alt="Slide 1">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/600x300" alt="Slide 2">
+                    <img src="resources/banner2.png" alt="Slide 2">
                 </div>
                 <div class="swiper-slide">
-                    <img src="https://via.placeholder.com/600x300" alt="Slide 3">
+                    <img src="resources/banner3.png" alt="Slide 3">
                 </div>
-                <div class="swiper-slide">
+              <!--   <div class="swiper-slide">
                     <img src="https://via.placeholder.com/600x300" alt="Slide 4">
-                </div>  
+                </div>  --> 
             </div>
             <!-- If we need navigation buttons -->
             <div class="swiper-button-next"></div>
