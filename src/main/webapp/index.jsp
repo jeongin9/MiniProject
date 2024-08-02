@@ -91,6 +91,38 @@
         </div>
         <!-- banner end -->
 
+<<<<<<< HEAD
+          <h2>주간 Best 스토리</h2>
+   </div>   
+   <div class="items mask">
+     <div class="item"> <img src="resources/flower.JPG" width="207" height="210" />
+     </div>
+     <div class="item">
+          <img src="resources/TOKYO.jfif" width="207" height="210" alt="포트테일" />
+       </div>
+       
+       <div class="item">
+          <img src="resources/caption.jpg" width="207" height="210" alt="배색패치야상" />
+       </div>
+       
+       <div class="item">
+          <img src="resources/4wp-87.jpg" width="207" height="210" alt="언발#NB" />
+       </div>
+       
+       <div class="item">
+          <img src="resources/photo1jpg.jpg" width="207" height="210" alt="에디션" />
+       </div>
+       </div>
+       </section>
+       <!-- 관광명소 정인 - 끝 -->
+       
+<!-- 푸터 -->
+<div class="footer">
+    <p>고객센터: 오전 9시 - 새벽 3시 운영</p>
+    <p>전화: 1453 - 7545 </p>
+    <p>Travel It</p>
+</div>
+=======
         <!-- 관광명소시작 -->
         <div class="titleframe2">
             <h2>국내 인기 관광명소</h2>
@@ -137,6 +169,7 @@
         </div>
         
     </section>
+>>>>>>> branch 'master' of https://github.com/jeongin9/MiniProject.git
 
     <jsp:include page="footer.jsp" />
 
