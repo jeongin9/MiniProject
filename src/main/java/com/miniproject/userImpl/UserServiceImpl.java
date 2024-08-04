@@ -1,39 +1,33 @@
 package com.miniproject.userImpl;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-/**
- * Servlet implementation class UserServiceImpl
- */
-public class UserServiceImpl extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserServiceImpl() {
-        super();
-        // TODO Auto-generated constructor stub
+import com.miniproject.user.UserService;
+import com.miniproject.user.UserVO;
+
+@Service
+public class UserServiceImpl implements UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
+    private final UserDAO userDAO;
+
+    @Autowired
+    public UserServiceImpl(UserDAO userDAO) {
+        this.userDAO = userDAO;
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    @Override
+    public UserVO loginUser(String id, String pass) {
+        logger.info("Logging in user with id: {}", id);
+        return userDAO.selectUserByIdAndPassword(id, pass);
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+    @Override
+    public boolean registerUser(UserVO user) {
+        logger.info("Registering user with id: {}", user.getId());
+        return userDAO.insertUser(user);
+    }
 }

@@ -123,16 +123,23 @@ body {
     <div class="login-box">
         <div class="login-header">LOGIN</div>
         <div style="padding: 20px;">
-            <!-- ID 입력 필드 -->
-            <div class="input-label">ID</div>
-            <input type="text" class="input-field" placeholder="아이디를 입력하세요">
-            <!-- PASSWORD 입력 필드 -->
-            <div class="input-label">PASSWORD</div>
-            <input type="password" class="input-field" placeholder="비밀번호를 입력하세요">
-            <!-- 로그인 버튼 -->
-            <button class="button" onclick="location.href='index.jsp'">LOGIN</button>
+            <!-- 로그인 폼 -->
+            <form action="/user/login.do" method="post">
+                <!-- ID 입력 필드 -->
+                <div class="input-label">ID</div>
+                <input type="text" name="id" class="input-field" placeholder="아이디를 입력하세요" required>
+                <!-- PASSWORD 입력 필드 -->
+                <div class="input-label">PASSWORD</div>
+                <input type="password" name="password" class="input-field" placeholder="비밀번호를 입력하세요" required>
+                <!-- 로그인 버튼 -->
+                <button type="submit" class="button">LOGIN</button>
+            </form>
             <!-- 가입 버튼 -->
             <button class="button join" onclick="location.href='join.jsp'">JOIN US</button>
+            <!-- 로그인 실패 메시지 표시 -->
+            <c:if test="${not empty loginError}">
+                <p style="color:red;">${loginError}</p>
+            </c:if>
         </div>
     </div>
 </body>

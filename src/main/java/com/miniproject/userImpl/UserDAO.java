@@ -1,39 +1,48 @@
 package com.miniproject.userImpl;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.miniproject.user.UserVO;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
-/**
- * Servlet implementation class UserDAO
- */
-public class UserDAO extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserDAO() {
-        super();
-        // TODO Auto-generated constructor stub
+import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import org.springframework.dao.EmptyResultDataAccessException;
+
+@Repository
+public class UserDAO {
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public UserDAO(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    public UserVO selectUserByIdAndPassword(String id, String pass) {
+        String sql = "SELECT * FROM users WHERE id = ? AND pass = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, new Object[]{id, pass}, new UserRowMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+    public boolean insertUser(UserVO user) {
+        String sql = "INSERT INTO users (id, pass, name, phone, nickname) VALUES (?, ?, ?, ?, ?)";
+        int rowsAffected = jdbcTemplate.update(sql, user.getId(), user.getPass(), user.getName(), user.getPhone(), user.getNickname());
+        return rowsAffected > 0;
+    }
 
+    private static class UserRowMapper implements RowMapper<UserVO> {
+        @Override
+        public UserVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+            UserVO user = new UserVO();
+            user.setId(rs.getString("id"));
+            user.setName(rs.getString("name"));
+            user.setPhone(rs.getString("phone"));
+            user.setNickname(rs.getString("nickname"));
+            return user;
+        }
+    }
 }

@@ -121,24 +121,28 @@ body {
     <div class="signup-box">
         <div class="signup-header">JOIN US</div>
         <div style="padding:20px;">
-            <!-- ID 입력 필드 -->
-            <div class="input-label">ID</div>
-            <input type="text" class="input-field" placeholder="아이디를 입력하세요">
-            <!-- PASSWORD 입력 필드 -->
-            <div class="input-label">PASSWORD</div>
-            <input type="password" class="input-field" placeholder="비밀번호를 입력하세요">
-            <!-- NAME 입력 필드 -->
-            <div class="input-label">NAME</div>
-            <input type="text" class="input-field" placeholder="이름을 입력하세요">
-            <!-- NICKNAME 입력 필드 -->
-            <div class="input-label">NICKNAME</div>
-            <input type="text" class="input-field" placeholder="닉네임을 입력하세요">
-            <!-- CONTACT 입력 필드 -->
-            <div class="input-label">CONTACT</div>
-            <input type="text" class="input-field" placeholder="연락처를 입력하세요">
-            <!-- 가입 완료로 로그인 페이지로 이동 -->
-            <button class="button submit" onclick="location.href='login.jsp'">JOIN</button>
+            <!-- 회원가입 폼 -->
+            <form action="/user/join.do" method="post">
+
+                <!-- ID 입력 필드 -->
+                <div class="input-label">ID</div>
+                <input type="text" name="id" class="input-field" placeholder="아이디를 입력하세요" required>
+                <!-- PASSWORD 입력 필드 -->
+                <div class="input-label">PASSWORD</div>
+                <input type="password" name="pass" class="input-field" placeholder="비밀번호를 입력하세요" required>
+                <!-- NAME 입력 필드 -->
+                <div class="input-label">NAME</div>
+                <input type="text" name="name" class="input-field" placeholder="이름을 입력하세요" required>
+                <!-- NICKNAME 입력 필드 -->
+                <div class="input-label">NICKNAME</div>
+                <input type="text" name="nickname" class="input-field" placeholder="닉네임을 입력하세요" required>
+                <!-- CONTACT 입력 필드 -->
+                <div class="input-label">CONTACT</div>
+                <input type="text" name="phone" class="input-field" placeholder="연락처를 입력하세요" required>
+                <!-- 가입 버튼 -->
+                <button type="submit" class="button submit">JOIN</button>
+            </form>
         </div>
     </div>
 </body>
-</html>
+	</html>
