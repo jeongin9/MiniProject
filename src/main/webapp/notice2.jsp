@@ -105,55 +105,42 @@ main {
     
 }
 
-.content-area {
-    display: gird;
-    height: 1000px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  
-    max-width: 100%; /* 최대 너비 설정 */
-    margin: 0 auto;
-      overflow-x: auto; /* 가로 스크롤 가능하게 설정 */
-    white-space: nowrap;
 
-}
+        .content-area {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 1000px; /* 최대 너비 설정 */
+        }
 
-.post {
- display: inline-block; /* 인라인 블록 요소로 설정 */
-    white-space: normal;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-       transition: transform 0.3s;
-    width: 300px; /* 고정 너비 설정 */
-    justify-content: center;
-}
+        .board-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-.post:hover {
-    transform: translateY(-5px);
-}
+        .board-table th, .board-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
 
-.post img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
+        .board-table th {
+            background-color: #f0f4ff;
+            color: #333;
+        }
 
-.post h3 {
-    margin: 20px;
-    font-size: 18px;
-    color: #333;
-}
+        .board-table td a {
+            text-decoration: none;
+            color: #333;
+        }
 
-.post p {
-    margin: 0 20px 20px;
-    color: #666;
-}
+        .board-table td a:hover {
+            text-decoration: underline;
+        }
+        
+        
 .pagination {
     display: flex;
     justify-content: center;
@@ -191,10 +178,13 @@ main {
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            position: absolute;
+			right:200px;
         }
 
         .write-btn:hover {
             background-color: #0056b3;
+          
         }
     </style>
 </head>
@@ -210,9 +200,9 @@ main {
     </section>
 </main>
 
-	<main>
-	<section>
-		<div>
+<main>
+<section>
+	<div>
 		<!-- <h1>공지사항</h1>  
 		<h4>트래블 잇의 주요 소식을 안내받으세요!</h4> -->
 	  <div class= "searchset">
@@ -223,32 +213,47 @@ main {
     </select>
     <input type= "text" placeholder="검색어를 입력하세요." class="researchbox">
     <button type="submit" class="btn2">검색</button>
+    
 	</div>	         
-   <a href="write.jsp" class="write-btn">관리자로 글 작성</a>
+   
 	</div>
+	
 	</section>
 	</main>
-	
+	<main>
+	<section><a href="write.jsp" class="write-btn">관리자로 글 작성</a></section>
+	</main>
 	
 	 <main>
-        <section class="content-area">
-            <div class="post">
-                <img src="resources/list1.png" alt="이미지1">
-                <h3>신규 회원 이용 가이드</h3>
-                <p>조회수: 211,445</p>
-            </div>
-            <div class="post">
-                <img src="resources/list2.png" alt="이미지2">
-                <h3>관광명소, 로컬푸드 등록 시 주의사항</h3>
-                <p>조회수: 211,445</p>
-            </div>
-            <div class="post">
-                <img src="resources/list3.png" alt="이미지3">
-                <h3>스토리 작성 가이드 ver.1</h3>
-                <p>조회수: 211,445</p>
-            </div>
-            <!-- 추가적인 게시물은 여기에 추가 -->
-        </section>
+       <section class="content-area">
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>제목</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#">신규 회원 이용 가이드</a></td>
+                    <td>211,445</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#">관광명소, 로컬푸드 등록 시 주의사항</a></td>
+                    <td>211,445</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#">스토리 작성 가이드 ver.1</a></td>
+                    <td>211,445</td>
+                </tr>
+                <!-- 추가적인 게시물은 여기에 추가 -->
+            </tbody>
+        </table>
+    </section>
              <div class="pagination">
             <a href="#">&laquo;</a>
             <a href="#" class="active">1</a>
