@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <header>
     <!-- 헤더 로고와 버튼을 위한 컨테이너 -->
-    <div class="header">
+    <div class="header" >
         <!-- 헤더 로고 -->
         <img src="resources/logo.png" alt="logo" class="logo">
         

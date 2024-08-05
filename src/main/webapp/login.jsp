@@ -106,7 +106,7 @@ body {
 }
 
 /* JOIN US 버튼 스타일 */
-.button.join {
+.button_join {
     background-color: #00A0FF;
 }
 </style>
@@ -121,19 +121,21 @@ body {
     
     <!-- 로그인 박스 -->
     <div class="login-box">
+    <form class="loginFrm" action="/login.do">
         <div class="login-header">LOGIN</div>
-        <div style="padding: 20px;">
+        <div style="padding: 20px;" action="/login.do">
             <!-- ID 입력 필드 -->
             <div class="input-label">ID</div>
             <input type="text" class="input-field" placeholder="아이디를 입력하세요">
             <!-- PASSWORD 입력 필드 -->
             <div class="input-label">PASSWORD</div>
-            <input type="password" class="input-field" placeholder="비밀번호를 입력하세요">
+            <input type="pass" class="input-field" placeholder="비밀번호를 입력하세요">
             <!-- 로그인 버튼 -->
-            <button class="button" onclick="location.href='index.jsp'">LOGIN</button>
+            <button type="submit" class="button_login" onclick="location.href='index.jsp'">LOGIN</button>
             <!-- 가입 버튼 -->
-            <button class="button join" onclick="location.href='join.jsp'">JOIN US</button>
+            <button type="submit" class="button_join" onclick="location.href='join.do'">JOIN US</button>
         </div>
+       </form>
     </div>
 </body>
 </html>

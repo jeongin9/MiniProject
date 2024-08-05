@@ -119,14 +119,15 @@ body {
     
     <!-- 회원가입 박스 -->
     <div class="signup-box">
+    <form class="joinFrm" action="/join.do">
         <div class="signup-header">JOIN US</div>
-        <div style="padding:20px;">
+        <div style="padding:20px;" action="/join.do">
             <!-- ID 입력 필드 -->
             <div class="input-label">ID</div>
             <input type="text" class="input-field" placeholder="아이디를 입력하세요">
             <!-- PASSWORD 입력 필드 -->
             <div class="input-label">PASSWORD</div>
-            <input type="password" class="input-field" placeholder="비밀번호를 입력하세요">
+            <input type="pass" class="input-field" placeholder="비밀번호를 입력하세요">
             <!-- NAME 입력 필드 -->
             <div class="input-label">NAME</div>
             <input type="text" class="input-field" placeholder="이름을 입력하세요">
@@ -137,8 +138,9 @@ body {
             <div class="input-label">CONTACT</div>
             <input type="text" class="input-field" placeholder="연락처를 입력하세요">
             <!-- 가입 완료로 로그인 페이지로 이동 -->
-            <button class="button submit" onclick="location.href='login.jsp'">JOIN</button>
+            <button type="submit" class="button submit" onclick="location.href='login.do'">JOIN</button>
         </div>
+        </form>
     </div>
 </body>
 </html>

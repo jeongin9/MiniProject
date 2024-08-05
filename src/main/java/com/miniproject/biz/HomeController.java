@@ -1,4 +1,4 @@
-package com.shoppingmall.biz;
+package com.miniproject.biz;
 
 import java.text.DateFormat;
 import java.util.Date;
