@@ -39,7 +39,7 @@ public class DispacherServlet extends HttpServlet {
 		
 		Controller ctrl = handlerMapping.getController(path);		//new LoginController()������ ��蹂대�� 諛�����
 		
-		String viewName = ctrl.handlerRequest(request, response);
+		String viewName = ctrl.handlerRequest(request, response ) ;
 		
 		String view = null;
 		
